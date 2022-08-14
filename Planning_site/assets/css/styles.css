@@ -168,6 +168,15 @@ column styles
     padding: 0.25em;
     width: 100%;
 }
+
+.col2-container{
+    overflow: hidden;
+}
+.col2{
+    box-sizing: border-box;
+    margin:  0.5em 0;
+    padding: 0.25em;
+    width: 100%;}
 /* -----------------------
 Single styles
 ------------------------*/
@@ -256,6 +265,14 @@ Wide styles
     float:left;
     box-sizing: border-box;
     width:50%;
+    margin:  0.5em 0;
+    padding: 0.55em;
+    overflow: hidden;
+    }
+    
+    .col2{
+    box-sizing: border-box;
+    width:100%;
     margin:  0.5em 0;
     padding: 0.55em;
     overflow: hidden;
