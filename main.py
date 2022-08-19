@@ -37,34 +37,34 @@ def print_with_index(customer_o):
 def add_pasta(l, customer_o):
     print_with_indexes(l)
     print("-" * 100)
-    message = "What pasta would you like to add to your order"
+    message = "What pasta would you like to add to your order: "
     option = get_integer(message)
     message = "How many {} would you like to add: ->".format(l[option][0])
     l[option][1] = get_integer(message)
     temp = (l[option][0], l[option][1], l[option][2])
     customer_o.append(temp)
-    output = "You have added {} {} to your order".format(l[option][1], l[option][0])
+    output = "You have added {} {} to your order: ".format(l[option][1], l[option][0])
     print(output)
 
 
 def get_details(customer_details):
-    message = "Would you like Pick up or delivery P/D"
+    message = "Would you like Pick up or delivery P/D: "
     option = get_string(message)
     print("-" * 100)
     if option == "P":
-        message = "What is your name"
+        message = "What is your name: "
         name = get_string(message)
-        message = "What is your phone number"
+        message = "What is your phone number: "
         phone_number = get_string(message)
         temp = ("Pick up", name, phone_number)
         customer_details.append(temp)
         return 0
     elif option == "D":
-        message = "What is your name"
+        message = "What is your name: "
         name = get_string(message)
-        message = "What is your phone number"
+        message = "What is your phone number: "
         phone_number = get_string(message)
-        message = "Where would you like your order delivered to"
+        message = "Where would you like your order delivered to: "
         address = get_string(message)
         temp = ("Delivery", name, phone_number, address)
         # print confirmation message
@@ -79,20 +79,20 @@ def review_order(customer_o, extras, customer_details):
         subtotal = x[1]*x[2]
         total += subtotal
         print(output)
-    total_output = "Your order will cost ${}".format(total)
+    total_output = "Your order will cost ${}: ".format(total)
     print("-" * 100)
     print(total_output)
     print_details(customer_details)
     if extras != 0:
         total += extras
-        output = "Due to a ${} extra charge your total will now be ${}".format(extras, total)
+        output = "Due to a ${} extra charge your total will now be ${}: ".format(extras, total)
         print(output)
 
 
 def remove_pasta(customer_o):
     print_with_index(customer_o)
     print("-" * 100)
-    message = "What pasta would you like to remove from your order"
+    message = "What pasta would you like to remove from your order: "
     option = get_integer(message)
     customer_o.pop(option)
 
@@ -100,13 +100,36 @@ def remove_pasta(customer_o):
 def update_pasta(customer_o):
     print_with_index(customer_o)
     print("-" * 100)
-    message = "What pasta would you like to update?"
+    message = "What pasta would you like to update? "
     option = get_integer(message)
-    output = "You currently have {} {} ordered".format(customer_o[option][1], customer_o[option][0])
+    output = "You currently have {} {} ordered: ".format(customer_o[option][1], customer_o[option][0])
     print(output)
-    message = "How many {} would you like now?".format(customer_o[option][0])
+    message = "How many {} would you like now? ".format(customer_o[option][0])
     new_value = get_integer(message)
     customer_o[option][1] = new_value
+
+
+def confirmation(customer_o, customer_details):
+    if len(customer_o) > 0 and len(customer_details) > 0:
+        message = "Would you like to place your order Y/N: "
+        response = get_string(message)
+        if response == "Y":
+            customer_o.clear()
+            customer_details.clear()
+            print("-" * 100)
+            message = "Would you like to place a new order Y/N: "
+            option = get_string(message)
+            if option == "Y":
+                print(main)
+            if option == "N":
+                print("Thank you")
+                exit()
+            # figure out hwo to quit
+        elif response == "N":
+            return
+    elif len(customer_o) <= 0 and len(customer_details) <= 0:
+        print("You haven't placed your order or entered you details yet please do so: ")
+        return
 
 
 def main():
@@ -130,11 +153,11 @@ def main():
     run = True
     while run is True:
         menu = ["P: Print Menu", "A: Add Pasta To Order", "RE: Remove Pasta From Order", "U: Update Order",
-                "D: Get customer details", "R: Review Order", "Q: Quit"]
+                "D: Get customer details", "R: Review Order", "C: Confirm order", "Q: Quit"]
         print("-" * 100)
         for x in menu:
             print(x)
-        choice = input("What would you like to do?")
+        choice = input("What would you like to do? ")
         print("-" * 100)
         if choice == "P":
             print_menu(pasta_lists)
@@ -148,6 +171,8 @@ def main():
             extras = get_details(customer_details)
         elif choice == "R":
             review_order(customer_order, extras, customer_details)
+        elif choice == "C":
+            confirmation(customer_order, customer_details)
         elif choice == "Q":
             run = False
         else:
