@@ -27,9 +27,15 @@
 			</div>
 			<div class="nav-bar">
 				<ul class="nav">
-					<li><a href="#">Nav item 1</a></li>
-					<li><a href="#">Nav item 2</a></li>
-					<li><a href="#">Nav item 3</a></li>
+                    <li><a href="#relevent">Relevant Implications</a></li>
+					<li><a href="#one">Sprint one</a></li>
+                    <li><a href="#two">Sprint Two</a></li>
+                    <li><a href="#three">Sprint Three</a></li>
+                    <li><a href="#four">Sprint Four</a></li>
+                    <li><a href="#five">Sprint Five</a></li>
+                    <li><a href="#six">Sprint Six</a></li>
+                    <li><a href="#seven">Sprint Seven</a></li>
+
 				</ul>
 			</div>
 			<div class="content">
@@ -42,10 +48,35 @@
                 <P> In this project we want to create three sprints to make computerised orders for a PastaBar. We want to include customer details, kinds of pasta ordered and pick up or delivery requirments into a computer and have it display the delivery details, itemised order and total cost.</P>
 					<hr>
                 <img class="img-responsive" src="assets/project-backlog.png" alt="">
+                
+                
+                <h3 class="jump-target" id ="relevent">Relevent implictions</h3>
+<ul>
+
+	<li><h5><B>Usability</B></h5></li>
+	<ul><li>This is about how a digital product, for example, an ordering system, should be easy to operate. The ordering system should communicate to the user/person who is using it what is going on and what they need to do for it to work. For example words, the way the screen is organised or even colour changes. Also if the user inputs something wrong it should clearly/politely communicate that they entered it wrong. If they enter something that is far from what they should've entered they should be notified of what they did wrong in a clear polite way and the user should be able to have another chance at entering whatever they have to enter.The user can intuitively learn the program quickly. All options are easy to understand and are also easy to find actions to take. The program has error prevention and when something does go wrong the program should not crash and the user should get clear messages on how to fix things. 
+
+		
+	</li></ul>
+	
+	<br>
+
+	<li><h5><B>Functionality</B></h5></li>
+	<ul><li>	
+The end product should work properly. This means there should be no errors popping up on the screen if the user does something wrong. The product should not be giving inaccurate information or inaccurate feedback. For example, the total price of the order should be right and they shouldn't have any extra money added on for no reason. After an order is placed all lists should be cleared so it can start again. 
+
+	</li></ul>
+	
+    <br>
+
+	<li><h5><B>Future proofing</B></h5></li>
+	<ul><li>Things could change as the program gets older and so you could one day run it and it doesn't work. This means the program might need to be updated. It doesn't mean it will be updated by you, it could need to be updated by someone else. This means a program should be commented so that anyone who opens it can see what is going on so they have a clue of where everything is. The program should also be structured in a way that more data can be added easily without the whole program crashing. . The program should be able to be handed over to a different developer and they should be able to understand it quickly. 
+	</li></ul>
+</ul>
 
     <!-- Heading levels -->
                 <hr>
-    <h1>Sprint One</h1>
+        <h1 class="jump-target" id ="one">Sprint One</h1>
                 <hr>
                <h5><b>Brief</b></h5> 
                 <p> In sprint one I got all my kinds of pasta organised. This meant their name, description of what the pasta is and the price of the pasta. I then wanted to create a function on pycharm that printed out a menu. This menu included all the information for the customer to choose from and have a clear idea of what each pasta contains. I then put it in a loop so I could ask the customer what they wanted to do. This loop had 2 options “P” for the print menu when the name description and price of each kind of pasta were printed. And “Q” is where you could quit the program and stop running. This was a basic sprint one as I just wanted to get the information onto the program so I could have a baseline sonic that could work from there. I also did a bit of formatting to make the program look nicer and easier to understand. This is all I did in Sprint one.  </p>
@@ -82,7 +113,7 @@
 
 
 <hr>
-<h1>Sprint Two</h1>
+  <h1 class="jump-target" id ="two">Sprint Two</h1>
                 <hr>
  <h5><b>Brief</b></h5>   
                 <p>In Sprint 2 I made a function where I could ask the customer what pasta they would like to add to their order. I printed out a little menu, this menu contains the name of the pasta and teh price as well as an index number for each pasta. I then asked what pasta they would like to add to their order. They provided me with a number that is next to the pasta. I then asked them how many of that type of pasta they would like to add to their order. I then put that into lists which I called customer order. I then made another function to review the order. This was very basic as it just printed out what was in their order so the name of the pasta and how many of that state would like to order.  
@@ -113,7 +144,7 @@
 
     
                 
-<h1>Sprint Three</h1>
+  <h1 class="jump-target" id ="three">Sprint Three</h1>
                 <hr>
                 
                 <h5><b>Brief</b></h5> 
@@ -158,7 +189,7 @@
  <hr>
  <hr>
 
-<h1>Sprint Four</h1>
+  <h1 class="jump-target" id ="four">Sprint Four</h1>
                 <hr>
                 
                 <h5><b>Brief</b></h5> 
@@ -184,6 +215,24 @@
                    
                
                 <hr>
+                
+<h3><b>Error</b> </h3>
+                
+                <p>Photo of teh error message</p>
+                
+                <img class="img-responsive" src="assets/sprint4-%20Error.png" alt=""> 
+                
+                <br>
+                
+                <p>Photo of the code that caused the error</p>
+         <img class="img-responsive" src="assets/sprint4-%20error%20code.png" alt="">
+                <br>
+                
+<h5> What caused the error</h5>
+                
+                <p>When working with updating pasta on the menu my program ran into an error. The error said, “ ‘tuple’ object does not support assignment”. At first, I was very confused about what this meant and then my teacher explained. A tuple for example (“A”, “B”, “C”) is immutable and can not be changed. Whereas a list for example [“A”, “B”, “C”] can be updated and changed.  Looking at the code above for where the error occurred I was trying to change this list. The list has curly brackets which meant it was a tuple. This meant it couldn't get updated so therefore it threw an error. To fix this I had to go change the “(“ to “[“ on ant lists I was trying to update or change. I also decided that I should make the past list tuple. A 2d list of tuples cannot be inadvertently changed. This meant it would stay how it was and would throw any errors or get all messed up. This helped stop a bunch of errors and made the program work properly and kept any list intact that didn't need to be changed and allowed lists that could be changed to be changed. 
+</p>
+                
  <h5><b>Refelction</b> </h5>
           
 
@@ -205,11 +254,17 @@
                 
         <p>Overall this version of the program has come out how I wanted it. It removes pasta from the order and the order can also be updated. There were a few bumps along the way but in the end, I got it to do what I needed to do. The next steps for the program would be to ask and retrieve the customer details. Asking if they would like pickup or delivery, getting their name, phone number and address for delivery. Also, I need to add three dollars to the order total if they would like it to be delivered. Another thing I need to do is validate my program at the end when everything else is completed. 
 </p>
+                
+<h3> Project backlog</h3>
+                
+                <p>Around this point of the program I made some edits to my project backlog. WHen working through I realised that customer details and validation were not as high a priority as adding and removing kinds of pasta from the order as this was the main thing the program did was create an ordering system. After adding pasta I decided it would be a good idea to work on removing and updating the past order before I did anything else </p>
+                
+                <img class="img-responsive" src="assets/projectbacklog2.png"alt="">
 
  <hr>
  <hr>
 
-                <h1>Sprint Five</h1>
+                  <h1 class="jump-target" id ="five">Sprint Five</h1>
                 <hr>
                 
                 <h5><b>Brief</b></h5> 
@@ -256,11 +311,18 @@
                 
         <p>Overall this version did everything I wanted it to do, It got the customer's details and it printed them out in the review order function as well as adding three dollars onto the price if needed. Everything we clearly laid out and the customer could see what they were doing. The next steps are to add the confirmation function and get the order to be finished and ask the user if they want to start a new order. This is the last part of the ordering system that needs to be done and then the program needs to be validated to make everything easier for the user. 
 </p>
+                
+                <h3> Project backlog</h3>
+                
+                <p>At this point in my program I changed the order of what I was doing on the project backlog again I reviewed my order after the previous sprint. I then decided it was time to get customer details first before validation as I would need to validate this input as well. I then also added a confirmation task to do in my project backlog which again came before validation. These were the main priority as they would need to be validated so I left validation till all my code was done so I could clearly validate everything. 
+ </p>
+                
+                <img class="img-responsive" src="assets/projectbacklog3.png"alt="">
 
  <hr>
  <hr>
                 
-<h1>Sprint Six</h1>
+  <h1 class="jump-target" id ="six">Sprint Six</h1>
                 <hr>
                 
                 <h5><b>Brief</b></h5> 
@@ -286,6 +348,9 @@
                    
                
                 <hr>
+                
+    
+                
  <h5><b>Refelction</b> </h5>
           
 
@@ -311,7 +376,7 @@
  <hr>
  <hr>
 
-<h1>Sprint Seven</h1>
+  <h1 class="jump-target" id ="seven">Sprint seven</h1>
                 <hr>
                 
                 <h5><b>Brief</b></h5> 
@@ -346,13 +411,67 @@
                 
         <p>Overall I liked how clean this page looked now. I liked how easy it was to navigate. It did everything I needed it to do and everything was working smoothly. For The version, I did a few trials. I had to test to see the limits for the min and max for both the string and integer inputs. I also had to test an editorial to see how I could make it case insensitive. The trialling helped me to test out different max and mins and find out how everything would work without causing my program to crash. Overall I really liked how my program turned out. 
 </p>
+                
+                  <h3> Project backlog</h3>
+                
+                <p>At this point in my program, I was coming to the end. I had finished everything I needed in good order so that everything played out nicely. I added everything I had written down that I needed to do and the last thing was validation. I kept this to last as I wanted to validate every input in my code. If I did it earlier on in the code I would've had to keep validating as I was working on the program. Leaving it to my last task allowed me to validate everything in one group which made everything easier and I knew that I had validated everything and everything was working properly. I knew this was going to be the part that took the longest and the most thinking so I left it to the last thing to do so I could really focus on it without working about anything else. 
+ </p>
+                
+                <img class="img-responsive" src="assets/projectbacklog4.png"alt="">
+                <br>
+                
+                <p>After validation was done I completed every task on my project backlog and my program has come together with who I wanted it to come together and had everything I wanted it to do on there. Here is a photo of my finished backlog. 
+</p>
+                <img class="img-responsive" src="assets/projectbacklogfinished.png"alt="">
+
 
  <hr>
  <hr>
 
 
-                <h3>Relevent implictions</h3>
-                <h3> Conclusion </h3>
+                
+<h3> Adressing Relevant Implications Summary</h3>  
+                
+                <p>Throughout working through my program I always kept in mind the relevant implications and tried to follow them whenever I could. I thought about the cultural, intellectual property, usability, functionality and future proofing implications through working on my program.
+</p>
+
+<ul>
+
+	<li><h5><B>Usability</B></h5></li>
+	<ul><li>When doing my code i made sure every time the user had to enter something i validated it this meant that if the user entered something that fat from being right or would cause an error the question would be asked again which gave them a second chance it also meant there were no program crashes. For example, If they had to enter either the letter “Y” or “N” and they entered “Q” The question would be asked again. Also, make sure that every time I communicated with the user I was being very clear and polite as I don't want to be rude. For example, when the user enters something wrong I say something like “You entered your details wrong, try again”. or when they enter something like when they are ordering pasta and they exceed the limit of how many of each pasta type you can order or they enter a negative number or something I tell them that the input is too small or too large. Users are clear about what to do and make it easy for them to understand. Everything is case insensitive meaning if they type capitals or lowercase letters it won't crash the system it will just work like normal. Which allows the user to go through the program smoothly. Also, the ordering system had a simple menu that allowed people to easily understand it and not be too confused. For example, the function Add pasta to order on the menu is labelled “A” and the remove last function is labelled “RE”. Thai helps people clearly understand what to do and makes everything easier to work and function as everything just makes sense. 
+
+		
+	</li></ul>
+	
+	<br>
+
+	<li><h5><B>Functionality</B></h5></li>
+	<ul><li>	Through the development of the program, I made sure to run parts of the code to make sure it didn't crash. I also tested parts of the code to make sure that all the information that was being given was accurate and wasn't incorrect. When it came to validation I pulled out separate pieces of code into my testing page. This helped me focus on the pieces of code I needed without worrying about anything crashing or not working properly. I also got other people to test my ordering system. This helped me to make sure that someone who didn't know my program could easily work through it. I asked for feedback and worked through everything based on people's comments. I made it easier to look at by giving breaks in the code when needed so that people could see what they were doing when going through the ordering system. Getting peel to test it helped me to make sure everything was validated and it all worked properly. I got people to not follow instructions when ordering to test to make sure no errors would be thrown. System testing throughout the program helped me to make sure things run smoothly and didn't crash. I made sure I tested it fully at the end of each sprint to make sure the program was working properly before I started the next sprint. I also got people to constantly test my programs. In the end, I got Aaliyah to test my program. I did this to make sure that someone who didn't know my program could use it without it crashing. I also got my mum and dad to do the same things. This helps to ensure there were no crashes and it would work properly and people that didn't understand the code and the program itself could use it without getting confused. 
+
+
+	</li></ul>
+	
+    <br>
+
+	<li><h5><B>Future proofing</B></h5></li>
+	<ul><li>
+        When working through my program I made sure to comment on anything that I thought would be useful to know what it was for. I explained/commented when I put loops or functions. I also commented on what each little part of the code was so that if anyone else was to try and fix the program they would know exactly what everything was and it was very clear to read. I also made sure that it was structured in a way so that it was easy to add more kinds of pasta to the pasta menu or remove pasta that is no longer on the menu off the ordering system. I also made sure it was easy to add code in the future if it needs to be updated. I had everything in different functions. This meant that if anything new needed to be added a new function could be created without having to adjust the full system and rising everything crashing. I doctyped the program as well which helped people to clearly understand what was going on in the coding part of the program. I made sure that the only thing that needed to be updated as the main menu function if something needed to be added. everything else can stay untouched. If they need to add or delete pasta from the menu the main function does that if they want to add new functions they play iy n the main function then they create a new function elsewhere. This allows the program to stay clean and risk fewer problems arising. I also made sure it was easy to add code in the future if it needs to be updated. I also did something called a pep8 check. This pep 8 check was attached through the program which made sure my code was correctly formatted according to python conventions. The pep 8  made sure everything was formatted correctly to how python liked it. If things were incorrect it told you what was incorrect you could click on the error and it would take you what line was incorrect. The errors were highlighted in the code and if you click the problems button at the bottom of the program there was a  clear and easy description of what was going wrong and what you needed to fix. They made it easy to understand what was incorrectly put in. For example, there weren't two clear lines before a function or there were too many spaces at the end of a line. It also made sure there weren't too many words on a line so that it was easy to understand and read. I learnt that python has a specific way they like to format their code and how they are very specific when it comes out things like a clear line at the end of the program. 
+
+	</li></ul>
+    <br>
+    
+       Here is a photo of the pep 8 sections. There are still some problems there. These problems do not affect the program when it's running; they just think that the variables are a bit odd as they are single letters rather than a full word. This doesn't affect the program. The errors aren't in red or yellow so they aren't major errors or will stop the program from running. It is more for the visual look of the program. 
+
+
+	
+
+</ul>
+                
+                 <img class="img-responsive" src="assets/pep8.png" alt=""> 
+                
+
+                <br>
+                <br>
 
 				
 

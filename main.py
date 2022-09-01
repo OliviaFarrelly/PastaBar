@@ -1,5 +1,12 @@
-def get_string(m, _min=1, _max=15):
-    # validation for string inputs
+def get_string(m, _min=1, _max=20):
+    """
+     validation for string inputs
+
+    :param m: string
+    :param _min: shortest string possible
+    :param _max: longest string possible
+    :return: string
+    """
     getting = True
     while getting is True:
         my_string = input(m)
@@ -12,7 +19,14 @@ def get_string(m, _min=1, _max=15):
 
 
 def get_integer(m, _min=0, _max=10):
-    # Validation for integer inputs
+    """
+    Validation for integer inputs
+
+    :param m: integer
+    :param _min: lowest integer possible
+    :param _max: highest integer possible
+    :return: integer
+    """
     getting = True
     while getting is True:
         try:
@@ -29,7 +43,12 @@ def get_integer(m, _min=0, _max=10):
 
 
 def print_menu(l):
-    # printing out the pasta menu with price, description and name of the dish
+    """
+    printing out the pasta menu with price, description and name of the dish
+
+    :param l: list
+    :return: none
+    """
     for x in l:
         print(x[0].upper())
         output = "{} ${}".format(x[1], x[2])
@@ -38,27 +57,49 @@ def print_menu(l):
 
 
 def print_details(customer_details):
-    # function to print out customer details when they have entered their details
+    """
+    function to print out customer details when they have entered their details
+
+    :param customer_details: list
+    :return: none
+    """
     for x in customer_details:
         output = "{}: Name: {} Phone number: {} Address: {}".format(x[0], x[1], x[2], x[3])
         print(output)
 
 
 def print_with_indexes(l):
-    # function to print out the pasta menu with indexes so user can choose what they want to add to their order
+    """
+     function to print out the pasta menu with indexes so user can choose what they want to add to their order
+
+    :param l: list
+    :return: none
+    """
     for x in range(0, len(l)):
         output = "{:2}: {:10} ${:2}".format(x, l[x][0].upper(), l[x][2])
         print(output)
 
 
 def print_with_index(customer_o):
-    # function to print the customer order out in a nice easy way for teh user to see and update if they need
+    """
+    function to print the customer order out in a nice easy way for teh user to see and update if they need
+
+    :param customer_o:
+    :return: none
+    """
     for x in range(0, len(customer_o)):
         output = "{:2}:{:10} {:10} ${:10}".format(x, customer_o[x][1], customer_o[x][0], customer_o[x][2])
         print(output)
 
 
 def add_pasta(l, customer_o):
+    """
+    adding pasta to the customer order
+
+    :param l: list
+    :param customer_o: list
+    :return: none
+    """
     # printing out the pasta list
     print_with_indexes(l)
     print("-" * 100)
@@ -67,17 +108,23 @@ def add_pasta(l, customer_o):
     option = get_integer(message)
     # asking hwo many they would like to add to their order
     message = "How many {} would you like to add: ->".format(l[option][0])
-    l[option][1] = get_integer(message)
+    quantity = get_integer(message)
     # creating a temporary list
-    temp = (l[option][0], l[option][1], l[option][2])
+    temp = [l[option][0], quantity, l[option][2]]
     # putting the information into the customers order
     customer_o.append(temp)
     # explaining what food they just added to their order
-    output = "You have added {} {} to your order: ".format(l[option][1], l[option][0])
+    output = "You have added {} {} to your order: ".format(temp[1], temp[0])
     print(output)
 
 
 def get_details(customer_details):
+    """
+    getting the customers details
+
+    :param customer_details: list
+    :return: 0 or 3
+    """
     # asking user whether their order will be picked up or delivered
     message = "Would you like Pick up or delivery P/D:"
     option = get_string(message)
@@ -124,6 +171,14 @@ def get_details(customer_details):
 
 
 def review_order(customer_o, extras, customer_details):
+    """
+    Reviewing teh customers order, there details, and giving them there total price
+
+    :param customer_o: list
+    :param extras: value
+    :param customer_details: list
+    :return: none
+    """
     # making total price 0 to start with
     total = 0
     # making an output so user can see what each pasta costs individually and the cost for how many they got
@@ -149,6 +204,12 @@ def review_order(customer_o, extras, customer_details):
 
 
 def remove_pasta(customer_o):
+    """
+    Removing all the one kind of pasta from the order
+
+    :param customer_o: list
+    :return: none
+    """
     # printing teh customers order out with indexes
     print_with_index(customer_o)
     print("-" * 100)
@@ -160,6 +221,12 @@ def remove_pasta(customer_o):
 
 
 def update_pasta(customer_o):
+    """
+    updating the amount of one kind of pasta they have in their order
+
+    :param customer_o: list
+    :return: none
+    """
     # printing teh customers order out with indexes
     print_with_index(customer_o)
     print("-" * 100)
@@ -177,6 +244,13 @@ def update_pasta(customer_o):
 
 
 def confirmation(customer_o, customer_details):
+    """
+    Confirming customers order and seeing if they want to place another order
+
+    :param customer_o: list
+    :param customer_details: list
+    :return: none
+    """
     # making sure there is information in both the lists
     if len(customer_o) > 0 and len(customer_details) > 0:
         # if there is information in both lists, asking teh user if they want to place their order
@@ -212,21 +286,27 @@ def confirmation(customer_o, customer_details):
 
 
 def main():
+    """
+    main menu of the ordering system
+    where all the lists are kept
+
+    :return: true or false
+    """
     # Pasta lists with name, price and description
-    pasta_lists = (["Fusilli Pesto", "Short, spiral pasta. Kale and cashew pesto and cream sauce, olives, "
-                    "parmesan", 19],
-                   ["Conchilglie alla Bolognese", "Small, shell pasta. Northern italian beef and pork sauce, "
-                    "parmesan", 22],
-                   ["Spaghetti Pomodoro", "Long, thin pasta. Classic tomato and basil sauce, parmesan", 16],
-                   ["Pappardelle Ricci D'Angelo", "Short, frizzy pasta. Slow cooked lamb ragu, "
-                    "rosemary, olives, sweet garlic, parmesan", 26],
-                   ["Fettuccine Carbonara", "Long, flat pasta. Creamy egg and pepper sauce, bacon, parmesan", 20],
-                   ["Ravioli di Ricotta", "Spinach and ricotta (filled) pasta, brown butter sauce, sage, "
-                    "hazelnuts, parmesan.", 20],
-                   ["Rigatoni alla Caponata", "Short, tube pasta. Agrodolce tomato sauce, eggplant, "
-                    "ricotta salata, pine nut", 21],
-                   ["Linguine Gamberi", "Long flat pasta. Tomato, garlic and chilli sauce, prawns, anchovies, "
-                    "capers, olives, parmesan", 23])
+    pasta_lists = (("Fusilli Pesto", "Short, spiral pasta. Kale and cashew pesto and cream sauce, olives, "
+                    "parmesan", 19),
+                   ("Conchilglie alla Bolognese", "Small, shell pasta. Northern italian beef and pork sauce, "
+                    "parmesan", 22),
+                   ("Spaghetti Pomodoro", "Long, thin pasta. Classic tomato and basil sauce, parmesan", 16),
+                   ("Pappardelle Ricci D'Angelo", "Short, frizzy pasta. Slow cooked lamb ragu, "
+                    "rosemary, olives, sweet garlic, parmesan", 26),
+                   ("Fettuccine Carbonara", "Long, flat pasta. Creamy egg and pepper sauce, bacon, parmesan", 20),
+                   ("Ravioli di Ricotta", "Spinach and ricotta (filled) pasta, brown butter sauce, sage, "
+                    "hazelnuts, parmesan.", 20),
+                   ("Rigatoni alla Caponata", "Short, tube pasta. Agrodolce tomato sauce, eggplant, "
+                    "ricotta salata, pine nut", 21),
+                   ("Linguine Gamberi", "Long flat pasta. Tomato, garlic and chilli sauce, prawns, anchovies, "
+                    "capers, olives, parmesan", 23))
     # empty lists for customers details and their order and for teh extras if needed
     customer_order = []
     customer_details = []
@@ -234,7 +314,6 @@ def main():
     # loop
     run = True
     while run is True:
-        # printing out the options for the user to choose from
         menu = ["P: Print Menu", "A: Add Pasta To Order", "RE: Remove Pasta From Order", "U: Update Order",
                 "D: Get customer details", "R: Review Order", "C: Confirm order", "Q: Quit"]
         print("-" * 100)
